@@ -110,8 +110,11 @@ app.get('/api/usuarios/:id', async (req, res) => {
 
 // POST - Criar novo usuário
 app.post('/api/usuarios', async (req, res) => {
+  console.log('🚀 Rota POST /api/usuarios chamada!');
   try {
     const { nome, email, idade } = req.body;
+    console.log('🔍 useMemoryStorage:', global.useMemoryStorage);
+    console.log('🔍 Dados recebidos:', { nome, email, idade });
 
     if (global.useMemoryStorage) {
       // Validação básica
@@ -147,8 +150,11 @@ app.post('/api/usuarios', async (req, res) => {
       });
     }
 
+    console.log('🔍 Tentando salvar usuário no MongoDB:', { nome, email, idade });
     const user = new User({ nome, email, idade });
+    console.log('🔍 Usuário criado:', user);
     const savedUser = await user.save();
+    console.log('✅ Usuário salvo no MongoDB:', savedUser);
 
     res.status(201).json({
       success: true,
