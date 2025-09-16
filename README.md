@@ -1,6 +1,6 @@
-# CRUD de Usuários - React + Chakra UI + Node.js + Express
+# CRUD User - React + Chakra UI + Node.js + MongoDB
 
-Um projeto completo de CRUD (Create, Read, Update, Delete) para gerenciamento de usuários, desenvolvido com React, Chakra UI, Node.js, Express e Axios.
+Um projeto completo de CRUD (Create, Read, Update, Delete) para gerenciamento de usuários, desenvolvido com React, Chakra UI, Node.js, Express, MongoDB e Axios.
 
 ## 🚀 Funcionalidades
 
@@ -18,7 +18,9 @@ Um projeto completo de CRUD (Create, Read, Update, Delete) para gerenciamento de
 - **Backend:**
   - Node.js
   - Express.js
+  - MongoDB + Mongoose
   - CORS
+  - dotenv
 
 - **Frontend:**
   - React 18
@@ -44,15 +46,26 @@ Um projeto completo de CRUD (Create, Read, Update, Delete) para gerenciamento de
 
 1. **Clone ou baixe o projeto**
    ```bash
-   cd crud-usuario-nodejs
+   cd CRUD_user
    ```
 
-2. **Instale as dependências**
+2. **Configure as variáveis de ambiente**
+   ```bash
+   # Copie o arquivo de exemplo
+   copy .env.example .env
+   
+   # Edite o .env com suas configurações
+   MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/crud-user
+   NODE_ENV=development
+   PORT=3000
+   ```
+
+3. **Instale as dependências**
    ```bash
    npm install
    ```
 
-3. **Execute o servidor**
+4. **Execute o servidor**
    ```bash
    npm start
    ```
@@ -62,7 +75,7 @@ Um projeto completo de CRUD (Create, Read, Update, Delete) para gerenciamento de
    npm run dev
    ```
 
-4. **Execute o projeto**
+5. **Execute o projeto**
    
    **Para desenvolvimento:**
    ```bash
@@ -79,7 +92,7 @@ Um projeto completo de CRUD (Create, Read, Update, Delete) para gerenciamento de
    npm start
    ```
 
-5. **Acesse a aplicação**
+6. **Acesse a aplicação**
    - Frontend React: `http://localhost:3001` (desenvolvimento)
    - Backend API: `http://localhost:3000/api/usuarios`
    - Produção: `http://localhost:3000` (após build)
@@ -196,7 +209,7 @@ A aplicação React com Chakra UI inclui:
 ## 📁 Estrutura do Projeto
 
 ```
-crud-usuario-react/
+CRUD_user/
 ├── src/
 │   ├── components/
 │   │   ├── UserForm.js     # Componente de formulário
@@ -233,12 +246,17 @@ A API retorna códigos de status HTTP apropriados:
 
 ## 🔄 Armazenamento
 
-Os dados são armazenados em memória durante a execução do servidor. Para persistência permanente, você pode integrar com bancos de dados como:
+O projeto utiliza **MongoDB Atlas** (gratuito) para persistência de dados com fallback automático para armazenamento em memória caso não consiga conectar ao banco.
 
-- MongoDB
-- PostgreSQL
-- MySQL
-- SQLite
+### Banco de Dados:
+- **MongoDB Atlas** - 512MB gratuito (configurado)
+- **Mongoose** - ODM para validações e schemas
+- **Fallback em memória** - Para desenvolvimento sem conexão
+
+### Alternativas gratuitas:
+- Supabase (PostgreSQL) - 500MB
+- PlanetScale (MySQL) - 5GB
+- Firebase Firestore - 1GB
 
 ## 🤝 Contribuição
 

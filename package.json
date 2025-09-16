@@ -1,7 +1,7 @@
 {
-  "name": "crud-usuario-react",
+  "name": "crud-user",
   "version": "1.0.0",
-  "description": "CRUD de usuários usando Node.js, Express e React",
+  "description": "CRUD User - Sistema de gerenciamento de usuários usando Node.js, Express e React",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -31,7 +31,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "framer-motion": "^10.16.0",
-    "mongodb": "^6.19.0",
+    "mongodb": "4.1",
     "mongoose": "^7.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

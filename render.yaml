@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: crud-usuarios-app
+    name: crud-user-app
     env: node
     plan: free
     buildCommand: npm install && npm run build
