@@ -1,0 +1,30 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+  "javascript.preferences.includePackageJsonAutoImports": "auto",
+  "typescript.preferences.includePackageJsonAutoImports": "auto",
+  "debug.console.fontSize": 14,
+  "debug.console.fontFamily": "Consolas, 'Courier New', monospace",
+  "terminal.integrated.fontSize": 14,
+  "workbench.colorCustomizations": {
+    "terminal.background": "#1e1e1e",
+    "terminal.foreground": "#d4d4d4"
+  },
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.git": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true
+  }
+}

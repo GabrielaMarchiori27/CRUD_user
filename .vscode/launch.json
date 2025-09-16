@@ -1,0 +1,78 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "🚀 Debug Backend (Node.js)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/server.js",
+      "console": "integratedTerminal",
+      "restart": true,
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "runtimeArgs": ["--inspect"]
+    },
+    {
+      "name": "🎨 Debug Frontend (React)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/webpack",
+      "args": [
+        "--mode",
+        "development",
+        "--watch"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "🔧 Debug Full Stack",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/server.js",
+      "console": "integratedTerminal",
+      "restart": true,
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "preLaunchTask": "build-frontend"
+    },
+    {
+      "name": "📦 Build Production",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/webpack",
+      "args": [
+        "--mode",
+        "production"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "🚀 Full Stack Development",
+      "configurations": [
+        "🚀 Debug Backend (Node.js)",
+        "🎨 Debug Frontend (React)"
+      ],
+      "stopAll": true,
+      "presentation": {
+        "hidden": false,
+        "group": "development",
+        "order": 1
+      }
+    }
+  ]
+}
